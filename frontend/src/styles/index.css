@@ -2,29 +2,38 @@
 
 :root {
   /* Core Luxury Palette */
-  --bg-primary: #FAF9F6;       /* Warm Ivory */
-  --bg-secondary: #F4F0E8;     /* Soft Cream */
-  --bg-card: #FFFFFF;          /* Pure White */
+  --bg-primary: #FAF9F6;
+  /* Warm Ivory */
+  --bg-secondary: #F4F0E8;
+  /* Soft Cream */
+  --bg-card: #FFFFFF;
+  /* Pure White */
   --bg-card-hover: #FDFBF7;
-  --bg-sand: #E8DDCC;          /* Highlight Soft Sand */
+  --bg-sand: #E8DDCC;
+  /* Highlight Soft Sand */
   --bg-sand-light: #F7F3EC;
 
   /* Accent Tones */
-  --accent-sage: #A8B5A0;      /* Muted Sage Green */
+  --accent-sage: #A8B5A0;
+  /* Muted Sage Green */
   --accent-sage-dark: #5B6A53;
   --accent-sage-light: #EBF0E9;
-  --accent-champagne: #D8C7A9; /* Champagne Beige */
+  --accent-champagne: #D8C7A9;
+  /* Champagne Beige */
   --accent-champagne-dark: #8C754E;
   --accent-champagne-light: #F7F2E9;
 
   /* Typography Colors */
-  --text-primary: #343B36;     /* Deep Charcoal */
-  --text-secondary: #85877F;   /* Warm Grey */
+  --text-primary: #343B36;
+  /* Deep Charcoal */
+  --text-secondary: #85877F;
+  /* Warm Grey */
   --text-muted: #A3A69F;
   --text-dark: #222623;
 
   /* Borders & Dividers */
-  --border-light: #E8E4DC;     /* Light Beige */
+  --border-light: #E8E4DC;
+  /* Light Beige */
   --border-subtle: #F0ECE4;
   --border-active: #A8B5A0;
 
@@ -32,9 +41,11 @@
   --status-available-bg: #EBF2EA;
   --status-available-text: #4D734B;
   --status-occupied-bg: #F7EBE8;
-  --status-occupied-text: #C98176;  /* Muted Terracotta */
+  --status-occupied-text: #C98176;
+  /* Muted Terracotta */
   --status-pending-bg: #F9F3E5;
-  --status-pending-text: #B58A38;   /* Muted Amber */
+  --status-pending-text: #B58A38;
+  /* Muted Amber */
   --status-dirty-bg: #F2ECF7;
   --status-dirty-text: #7E6494;
 
@@ -75,6 +86,23 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+body {
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  min-height: 100vh;
+  height: auto;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -97,12 +125,17 @@ button {
   transition: var(--transition-fast);
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: inherit;
 }
 
 /* Headings */
-h1, h2, h3, .font-serif {
+h1,
+h2,
+h3,
+.font-serif {
   font-family: var(--font-serif);
   color: var(--text-primary);
   letter-spacing: -0.01em;
@@ -320,7 +353,9 @@ h1, h2, h3, .font-serif {
 }
 
 /* Form Inputs */
-.luxury-input, .input-field, .select-field {
+.luxury-input,
+.input-field,
+.select-field {
   background-color: #FFFFFF;
   border: 1px solid var(--border-light);
   color: var(--text-primary);
@@ -332,13 +367,16 @@ h1, h2, h3, .font-serif {
   transition: var(--transition-fast);
 }
 
-.luxury-input:focus, .input-field:focus, .select-field:focus {
+.luxury-input:focus,
+.input-field:focus,
+.select-field:focus {
   border-color: var(--accent-sage);
   box-shadow: 0 0 0 3px rgba(168, 181, 160, 0.2);
 }
 
 /* Global Light Luxury Date Inputs */
-input[type="date"], .date-picker-input {
+input[type="date"],
+.date-picker-input {
   color-scheme: light;
   background-color: #FFFFFF !important;
   color: #343B36 !important;
@@ -353,7 +391,8 @@ input[type="date"], .date-picker-input {
   transition: var(--transition-fast);
 }
 
-input[type="date"]:focus, .date-picker-input:focus {
+input[type="date"]:focus,
+.date-picker-input:focus {
   border-color: var(--accent-sage);
   box-shadow: 0 0 0 3px rgba(168, 181, 160, 0.25);
 }
@@ -449,8 +488,15 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade {
@@ -462,13 +508,16 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   width: 7px;
   height: 7px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border-light);
   border-radius: var(--radius-pill);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-champagne);
 }
@@ -478,9 +527,12 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   body * {
     visibility: hidden;
   }
-  #printable-invoice, #printable-invoice * {
+
+  #printable-invoice,
+  #printable-invoice * {
     visibility: visible;
   }
+
   #printable-invoice {
     position: absolute;
     left: 0;
@@ -491,10 +543,13 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     background: #FFFFFF !important;
     color: #343B36 !important;
   }
-  .no-print, .modal-overlay {
+
+  .no-print,
+  .modal-overlay {
     background: none !important;
     backdrop-filter: none !important;
   }
+
   .no-print {
     display: none !important;
   }

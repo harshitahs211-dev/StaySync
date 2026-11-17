@@ -219,7 +219,7 @@ export default function AuthLandingPage({ defaultTab = 'LOGIN' }) {
 
   return (
     <div style={{ backgroundColor: '#FAF9F6', minHeight: '100vh', color: '#343B36' }}>
-      
+
       {/* Hero & Authentication Section */}
       <section style={{
         position: 'relative',
@@ -228,14 +228,14 @@ export default function AuthLandingPage({ defaultTab = 'LOGIN' }) {
         borderBottom: '1px solid #E8E4DC'
       }}>
         <div className="app-container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          
+
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
             gap: '3.5rem',
             alignItems: 'center'
           }}>
-            
+
             {/* Left Column: Brand Hero Text */}
             <div>
               <div style={{
@@ -391,7 +391,7 @@ export default function AuthLandingPage({ defaultTab = 'LOGIN' }) {
                   margin: '0 auto'
                 }}
               >
-                
+
                 {/* Tab Switcher: Login / Sign Up */}
                 <div style={{
                   display: 'grid',
@@ -444,7 +444,7 @@ export default function AuthLandingPage({ defaultTab = 'LOGIN' }) {
                 {/* TAB 1: LOGIN FORM */}
                 {activeTab === 'LOGIN' && (
                   <form onSubmit={handleLoginSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                    
+
                     <div>
                       <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#343B36', fontFamily: 'Playfair Display, Georgia, serif', margin: 0 }}>
                         Welcome Back
@@ -650,7 +650,7 @@ export default function AuthLandingPage({ defaultTab = 'LOGIN' }) {
                 {/* TAB 2: REGISTER FORM */}
                 {activeTab === 'REGISTER' && (
                   <form onSubmit={handleRegisterSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                    
+
                     <div>
                       <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#343B36', fontFamily: 'Playfair Display, Georgia, serif', margin: 0 }}>
                         Create Guest Account
@@ -732,11 +732,15 @@ export default function AuthLandingPage({ defaultTab = 'LOGIN' }) {
                         <span>Phone Number (for SMS & Digital Keys)</span>
                       </label>
                       <input
-                        type="tel"
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]{10}"
+                        maxLength={10}
+                        minLength={10}
                         className="input-field"
-                        placeholder="+91 98200 12345"
+                        placeholder="Enter 10-digit mobile number"
                         value={regPhone}
-                        onChange={e => setRegPhone(e.target.value)}
+                        onChange={e => setRegPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
                         required
                         style={{ backgroundColor: '#FAF9F6', borderColor: '#E8E4DC', color: '#343B36' }}
                       />
@@ -864,7 +868,7 @@ export default function AuthLandingPage({ defaultTab = 'LOGIN' }) {
         borderBottom: '1px solid #E8E4DC'
       }}>
         <div className="app-container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          
+
           <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 3.5rem auto' }}>
             <span style={{
               fontSize: '0.8rem',
@@ -898,7 +902,7 @@ export default function AuthLandingPage({ defaultTab = 'LOGIN' }) {
             gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
             gap: '2rem'
           }}>
-            
+
             {/* PORTAL 1: GUEST */}
             <div
               className="luxury-card"
