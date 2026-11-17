@@ -1,0 +1,9 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://staysync-backend-j1ow.onrender.com/api/:path*"
+    }
+  ]
+}
